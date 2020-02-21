@@ -16,19 +16,19 @@
   <body>
     <div class="container" id="app">
       <!-- Logout button and notification for success / error event -->
-      <div class="row my-3">
+      <div id='logoutButton' class="row my-3">
         <button id="btn-logout" class="btn btn-primary ml-auto">Logout</button>
       </div>
-      <div class="row my-3">
+      <div id='createTripButton' class="row my-3">
         <button id="btn-show-create" class="btn btn-success ml-auto">Create Trip</button>
       </div>
 
       <div id="alert" class="alert alert-warning alert-dismissible fade show" role="alert">
-        Your notification goes here
+        
       </div>
 
       <!-- This is Login Form  -->
-      <div>
+      <div id='loginForm'>
         <h1>Login</h1>
         <form class="my-4">
           <div class="form-group">
@@ -51,16 +51,16 @@
               required
             />
           </div>
-          <button type="submit" class="btn btn-primary">
+          <button type="button" id="submitLogin" class="btn btn-primary">
             Submit
-          </button>
-          <button type="submit" class="btn btn-info">
+          </button> 
+          <button id='goToRegister' type="button" class="btn btn-info">
             Register
           </button>
         </form>
       </div>
 
-      <div>
+      <div id='registerForm'>
         <h1>Register</h1>
         <form class="my-4">
           <div class="form-group">
@@ -69,7 +69,7 @@
               type="name"
               class="form-control"
               name="name"
-              id="name"
+              id="nameRegister"
               required
             />
           </div>
@@ -79,7 +79,7 @@
               type="email"
               class="form-control"
               name="email"
-              id="email"
+              id="emailRegister"
               required
             />
           </div>
@@ -89,80 +89,71 @@
               type="password"
               class="form-control"
               name="password"
-              id="password"
+              id="passwordRegister"
               required
             />
           </div>
-          <button type="submit" class="btn btn-primary">
+          <button id='submitRegister' type="button" class="btn btn-primary">
             Submit
           </button>
-          <button type="submit" class="btn btn-info">
+          <button id="goToLogin" type="button" class="btn btn-info">
             Login
           </button>
         </form>
       </div>
 
       <!-- This is Trip list -->
-      <div>
+      <div id='tripList'>
         <h1>Trip List</h1>
-        <div class="row my-4">
+        <div id="tripCards" class="row my-4">
           <!-- Each of trip will have one of this card -->
-          <div class="col-4 mb-4">
-            <div class="card text-center">
-              <div class="card-body">
-                <h5 class="card-title">Trip Title</h5>
-                <p class="card-text">Trip Location</p>
-                <p class="card-text">Trip Date</p>
-                <button class="btn btn-primary btn-edit-trip">Edit</button>
-              </div>
-            </div>
-          </div>
+          
           
         </div>
       </div>
       
       <!-- This is form page to create a trip -->
-      <div>
+      <div id='createTrip'>
         <h1>Create Trip</h1>
         <form class="my-4">
           <div class="form-group">
             <label for="title-create">Title</label>
-            <input type="text" class="form-control" name="title-create" />
+            <input type="text" class="form-control" name="title-create" id="title-create" />
           </div>
           <div class="form-group">
             <label for="location-create">Location</label>
-            <input type="text" class="form-control" name="location-create" />
+            <input type="text" class="form-control" name="location-create" id="location-create" />
           </div>
           <div class="form-group">
             <label for="date-create">Date</label>
-            <input type="date" class="form-control" name="date-create" />
+            <input type="date" class="form-control" name="date-create" id="date-create" />
           </div>
-          <button type="submit" class="btn btn-primary">
+          <button id="submit-create" type="button" class="btn btn-primary">
             Submit
           </button>
-          <button type="submit" class="btn btn-warning">
+          <button id="random-create" type="button" class="btn btn-warning">
             Random Location & Date
           </button>
         </form>
       </div>
 
       <!-- This is form page to update a trip -->
-      <div>
+      <div id='updateTrip'>
         <h1>Update Trip</h1>
         <form class="my-4">
           <div class="form-group">
             <label for="title">Title</label>
-            <input type="text" class="form-control" name="title" />
+            <input id='title-update' type="text" class="form-control" name="title" />
           </div>
           <div class="form-group">
             <label for="location">Location</label>
-            <input type="text" class="form-control" name="location" />
+            <input id='location-update' type="text" class="form-control" name="location" />
           </div>
           <div class="form-group">
             <label for="date">Date</label>
-            <input type="date" class="form-control" name="date" />
+            <input id='date-update' type="date" class="form-control" name="date" />
           </div>
-          <button id="btn-update" type="submit" class="btn btn-primary">
+          <button id="btn-update" type="button" class="btn btn-primary">
             Submit
           </button>
         </form>
@@ -170,5 +161,6 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="./main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js"></script>
   </body>
 </html>
